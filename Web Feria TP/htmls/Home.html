@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feria TP 3ro Programación</title>
+    <link rel="icon" href="../Images/favicon.ico" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="../Style/HomeStyle.css">
+</head>
+<body>
+    <header>
+        <div class="topnav">
+            <!-- Centered link -->
+            <div class="Home">
+                <a href="" class="HomeSub">Inicio</a>
+            </div>
+            <div class="topnav-right">
+                <a href="Web.html">Informacion de la Web</a>
+                <a href="Minecraft.html">Minecraft</a>
+                <a href="Gusano.html">Gusano</a>
+                <a href="Novela.html">Demo Novela Gráfica</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Carrusel Mejorado -->
+    <div id="miCarrusel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="4000">
+        <!-- Indicadores -->
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#miCarrusel" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#miCarrusel" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#miCarrusel" data-bs-slide-to="2"></button>
+            <button type="button" data-bs-target="#miCarrusel" data-bs-slide-to="3"></button>
+        </div>
+        
+        <!-- Slides con texto -->
+        <div class="carousel-inner">
+            <!-- Slide 1 -->
+            <div class="carousel-item active">
+                <img src="../Images/Carrusel/Place Holder.jpg" class="d-block w-100 carousel-img" alt="Gusano Informático">
+                <div class="carousel-caption d-none d-md-block">
+                    <h2 class="animate__animated animate__fadeInDown">Gusano Informático</h2>
+                    <p class="animate__animated animate__fadeInUp animate__delay-1s">Desarrollado por Ignacio Olivares</p>
+                </div>
+            </div>
+            
+            <!-- Slide 2 -->
+            <div class="carousel-item">
+                <img src="../Images/Carrusel/Place Holder.jpg" class="d-block w-100 carousel-img" alt="Mundo de Minecraft">
+                <div class="carousel-caption d-none d-md-block">
+                    <h2 class="animate__animated animate__fadeInDown">Mundo de Minecraft</h2>
+                    <p class="animate__animated animate__fadeInUp animate__delay-1s">Desarrollado por Máximo, Max y Martina</p>
+                </div>
+            </div>
+            
+            <!-- Slide 3 -->
+            <div class="carousel-item">
+                <img src="../Images/Carrusel/Place Holder.jpg" class="d-block w-100 carousel-img" alt="Novela Gráfica">
+                <div class="carousel-caption d-none d-md-block">
+                    <h2 class="animate__animated animate__fadeInDown">Demo de Novela Gráfica</h2>
+                    <p class="animate__animated animate__fadeInUp animate__delay-1s">Dibujada y Desarrollada por Miley Soto</p>
+                </div>
+            </div>
+
+            <!-- Slide 4 -->
+            <div class="carousel-item">
+                <img src="../Images/Carrusel/Place Holder.jpg" class="d-block w-100 carousel-img" alt="Página Web">
+                <div class="carousel-caption d-none d-md-block">
+                    <h2 class="animate__animated animate__fadeInDown">Página Web de Demostración</h2>
+                    <p class="animate__animated animate__fadeInUp animate__delay-1s">Diseñada y programada por Ignacio Olivares</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Controles -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#miCarrusel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Anterior</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#miCarrusel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Siguiente</span>
+        </button>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Scripts -->
+    <script src="../Scripts/Bootstrap-Load.js"></script>
+    <script src="../Scripts/Carousel-Animations.js"></script>
+    <script src="../Scripts/Navbar-interaction.js"></script>
+    <script src="../Scripts/Main.js"></script>
+<footer class="footer">
+    <p>Bienvenido a la feria TP Liceo Bicentenario 2025</p>
+</footer>
+</body>
+</html>
