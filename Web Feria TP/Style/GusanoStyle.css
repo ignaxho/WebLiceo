@@ -1,29 +1,27 @@
 body{
     font: sans-serif;
-    background-image: url(../Images/Carrusel/Place\ Holder.jpg);
 }
 
 .topnav {
     position: relative;
-    background-color: #0d089c;
+    background-color: #262469;
     overflow: hidden;
 }
 
 /* Estilo de los botones y texto*/
 .topnav a {
-
-    float: left;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
+  float: left;
+  background-color: #e9b72c;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
 }
 
-/* Cambia el color de los botons al poner el mouse encima */
 .topnav a:hover {
-    background-color: #0a0763;
-    color: white;
+  background-color: #cba028;
+  color: whitesmoke;
 }
 .topnav-right{
     float: right;
@@ -56,7 +54,6 @@ body{
     padding: 10px;
     width: 25%;
     height: 100%;
-    background-color: antiquewhite;
     border-radius: 4px;
 }
 .HowG{
@@ -65,7 +62,6 @@ body{
     padding: 10px;
     width: 25%;
     height: 100%;
-    background-color: antiquewhite;
     border-radius: 4px;
 }
 .ButtonContainer{
@@ -74,16 +70,24 @@ body{
     align-items: center;
     height: 150px
 }
-.ButtonGit{
-    text-align: center;
-    height: 25px;
-    width: 100px;
+.ButtonGit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    width: 120px;
     background-color: gainsboro;
     border-radius: 4px;
-    background-size: auto;
     text-decoration: none;
     color: black;
+    border: none;
+    cursor: pointer;
+    font-family: sans-serif;
+    font-size: 16px;
+    padding: 0;
+    margin: 0;
 }
+
 .ButtonGit:hover{
     background-color: gray;
 }

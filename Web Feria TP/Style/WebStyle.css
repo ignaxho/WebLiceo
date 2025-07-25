@@ -1,24 +1,22 @@
 .topnav {
     position: relative;
-    background-color: #0d089c;
+    background-color: #262469;
     overflow: hidden;
 }
 
 /* Estilo de los botones y texto*/
 .topnav a {
-
-    float: left;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
+  float: left;
+  background-color: #e9b72c;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
 }
-
-/* Cambia el color de los botons al poner el mouse encima */
 .topnav a:hover {
-    background-color: #0a0763;
-    color: white;
+  background-color: #cba028;
+  color: whitesmoke;
 }
 .topnav-right{
     float: right;

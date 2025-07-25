@@ -14,23 +14,24 @@ body {
 
 /* Estilos para el navbar */
 .topnav {
-  position: relative;
-  background-color: #0d089c;
-  overflow: hidden;
+    position: relative;
+    background-color: #262469;
+    overflow: hidden;
 }
 
+/* Estilo de los botones y texto*/
 .topnav a {
   float: left;
+  background-color: #e9b72c;
   color: white;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
   font-size: 17px;
 }
-
 .topnav a:hover {
-  background-color: #0a0763;
-  color: white;
+  background-color: #cba028;
+  color: whitesmoke;
 }
 
 .topnav-right {
@@ -41,11 +42,11 @@ body {
   float: left;
 }
 
-/* Contenedor principal del carrusel - Ocupa todo el espacio disponible */
 #miCarrusel {
   flex: 1;
   width: 100%;
   position: relative;
+  height: 129px; /* Altura fija para el contenedor del carrusel */
 }
 
 .carousel-inner {
@@ -57,12 +58,12 @@ body {
 }
 
 .carousel-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
+  max-height: 1290px;
+  width: auto;
+  max-width: 100%;
+  margin: 0 auto; /* Centra la imagen horizontalmente */
+  display: block;
 }
-
 /* Estilos para las captions */
 .carousel-caption {
   bottom: 30%;
@@ -81,7 +82,7 @@ body {
 }
 
 .footer {
-  background-color: #0d089c;
+  background-color: #262469;
   color: white;
   text-align: center;
   font-family: sans-serif;
