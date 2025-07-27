@@ -6,24 +6,29 @@
     <title>Página con Rick Roll Local</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: sans-serif;
             text-align: center;
             margin: 0;
             padding: 20px;
             background-color: #f0f0f0;
         }
         
-        #registroBtn {
+        #registroBtn{
             padding: 15px 30px;
             font-size: 18px;
-            background-color: #4CAF50;
+            background-color: #e9b72c;
             color: white;
             border: none;
             border-radius: 5px;
             cursor: pointer;
+            margin: 10px;
         }
         
-        #rickrollContainer {
+        #registroBtn:hover{
+            background-color: #cba028;
+        }
+        
+        #rickrollContainer, #BadAppleContainer {
             display: none;
             position: fixed;
             top: 0;
@@ -34,7 +39,7 @@
             z-index: 1000;
         }
         
-        #rickrollVideo {
+        #rickrollVideo, #BadAppleVideo {
             width: 100%;
             height: 100%;
             object-fit: contain;
@@ -42,13 +47,18 @@
     </style>
 </head>
 <body>
-    <h1>¡Regístrate para continuar!</h1>
+    <h1>¡Registrate para el sorteo!</h1>
     <button id="registroBtn">Registro</button>
     
-    <!-- Contenedor del video (oculto inicialmente) -->
     <div id="rickrollContainer">
-        <video id="rickrollVideo" autoplay loop muted playsinline>
+        <video id="rickrollVideo" loop muted playsinline>
             <source src="../Videos/Rick.mp4" type="video/mp4">
+            Tu navegador no soporta videos HTML5.
+        </video>
+    </div>
+    <div id="BadAppleContainer">
+        <video id="BadAppleVideo" playsinline>
+            <source src="../Videos/BadApple.mp4" type="video/mp4">
             Tu navegador no soporta videos HTML5.
         </video>
     </div>
@@ -58,16 +68,50 @@
             const container = document.getElementById('rickrollContainer');
             const video = document.getElementById('rickrollVideo');
             
-
             container.style.display = 'block';
-            
-
+            video.volume = 0.2;
             video.muted = false;
             video.play().catch(error => {
-
                 video.muted = true;
                 video.play();
             });
+        });
+
+        const konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'Enter'];
+        let konamiIndex = 0;
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === konamiCode[konamiIndex]) {
+                konamiIndex++;
+                if (konamiIndex === konamiCode.length) {
+                    const container = document.getElementById('BadAppleContainer');
+                    const video = document.getElementById('BadAppleVideo');
+                    
+                    container.style.display = 'block';
+                    video.volume = 0.1;
+                    video.muted = false;
+                    
+                    video.play().then(() => {
+                        if (video.requestFullscreen) {
+                            video.requestFullscreen();
+                        } else if (video.webkitRequestFullscreen) {
+                            video.webkitRequestFullscreen();
+                        } else if (video.msRequestFullscreen) {
+                            video.msRequestFullscreen();
+                        }
+                    }).catch(error => {
+                        video.muted = true;
+                        video.play().then(() => {
+                            if (video.requestFullscreen) {
+                                video.requestFullscreen();
+                            }
+                        });
+                    });
+                    konamiIndex = 0;
+                }
+            } else {
+                konamiIndex = 0;
+            }
         });
     </script>
 </body>
