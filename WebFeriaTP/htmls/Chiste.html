@@ -1,118 +1,135 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Página con Rick Roll Local</title>
     <style>
-        body {
-            font-family: sans-serif;
-            text-align: center;
-            margin: 0;
-            padding: 20px;
-            background-color: #f0f0f0;
-        }
-        
-        #registroBtn{
-            padding: 15px 30px;
-            font-size: 18px;
-            background-color: #e9b72c;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            margin: 10px;
-        }
-        
-        #registroBtn:hover{
-            background-color: #cba028;
-        }
-        
-        #rickrollContainer, #BadAppleContainer {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: black;
-            z-index: 1000;
-        }
-        
-        #rickrollVideo, #BadAppleVideo {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-        }
+      body {
+        font-family: sans-serif;
+        text-align: center;
+        margin: 0;
+        padding: 20px;
+        background-color: #f0f0f0;
+      }
+
+      #registroBtn {
+        padding: 15px 30px;
+        font-size: 18px;
+        background-color: #e9b72c;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin: 10px;
+      }
+
+      #registroBtn:hover {
+        background-color: #cba028;
+      }
+
+      #rickrollContainer,
+      #BadAppleContainer {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: black;
+        z-index: 1000;
+      }
+
+      #rickrollVideo,
+      #BadAppleVideo {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <h1>¡Registrate para el sorteo!</h1>
     <button id="registroBtn">Registro</button>
-    
+
     <div id="rickrollContainer">
-        <video id="rickrollVideo" loop muted playsinline>
-            <source src="../Videos/Rick.mp4" type="video/mp4">
-            Tu navegador no soporta videos HTML5.
-        </video>
+      <video id="rickrollVideo" loop muted playsinline>
+        <source src="../Videos/Rick.mp4" type="video/mp4" />
+        Tu navegador no soporta videos HTML5.
+      </video>
     </div>
     <div id="BadAppleContainer">
-        <video id="BadAppleVideo" loop playsinline>
-            <source src="../Videos/BadApple.mp4" type="video/mp4">
-            Tu navegador no soporta videos HTML5.
-        </video>
+      <video id="BadAppleVideo" loop playsinline>
+        <source src="../Videos/BadApple.mp4" type="video/mp4" />
+        Tu navegador no soporta videos HTML5.
+      </video>
     </div>
 
     <script>
-        document.getElementById('registroBtn').addEventListener('click', function() {
-            const container = document.getElementById('rickrollContainer');
-            const video = document.getElementById('rickrollVideo');
-            
-            container.style.display = 'block';
-            video.volume = 0.2;
+      document
+        .getElementById("registroBtn")
+        .addEventListener("click", function () {
+          const container = document.getElementById("rickrollContainer");
+          const video = document.getElementById("rickrollVideo");
+
+          container.style.display = "block";
+          video.volume = 0.2;
+          video.muted = false;
+          video.play().catch((error) => {
+            video.muted = true;
+            video.play();
+          });
+        });
+
+      const konamiCode = [
+        "ArrowUp",
+        "ArrowUp",
+        "ArrowDown",
+        "ArrowDown",
+        "ArrowLeft",
+        "ArrowRight",
+        "ArrowLeft",
+        "ArrowRight",
+        "Enter",
+      ];
+      let konamiIndex = 0;
+
+      document.addEventListener("keydown", function (e) {
+        if (e.key === konamiCode[konamiIndex]) {
+          konamiIndex++;
+          if (konamiIndex === konamiCode.length) {
+            const container = document.getElementById("BadAppleContainer");
+            const video = document.getElementById("BadAppleVideo");
+
+            container.style.display = "block";
+            video.volume = 0.1;
             video.muted = false;
-            video.play().catch(error => {
-                video.muted = true;
-                video.play();
-            });
-        });
 
-        const konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'Enter'];
-        let konamiIndex = 0;
-
-        document.addEventListener('keydown', function(e) {
-            if (e.key === konamiCode[konamiIndex]) {
-                konamiIndex++;
-                if (konamiIndex === konamiCode.length) {
-                    const container = document.getElementById('BadAppleContainer');
-                    const video = document.getElementById('BadAppleVideo');
-                    
-                    container.style.display = 'block';
-                    video.volume = 0.1;
-                    video.muted = false;
-                    
-                    video.play().then(() => {
-                        if (video.requestFullscreen) {
-                            video.requestFullscreen();
-                        } else if (video.webkitRequestFullscreen) {
-                            video.webkitRequestFullscreen();
-                        } else if (video.msRequestFullscreen) {
-                            video.msRequestFullscreen();
-                        }
-                    }).catch(error => {
-                        video.muted = true;
-                        video.play().then(() => {
-                            if (video.requestFullscreen) {
-                                video.requestFullscreen();
-                            }
-                        });
-                    });
-                    konamiIndex = 0;
+            video
+              .play()
+              .then(() => {
+                if (video.requestFullscreen) {
+                  video.requestFullscreen();
+                } else if (video.webkitRequestFullscreen) {
+                  video.webkitRequestFullscreen();
+                } else if (video.msRequestFullscreen) {
+                  video.msRequestFullscreen();
                 }
-            } else {
-                konamiIndex = 0;
-            }
-        });
+              })
+              .catch((error) => {
+                video.muted = true;
+                video.play().then(() => {
+                  if (video.requestFullscreen) {
+                    video.requestFullscreen();
+                  }
+                });
+              });
+            konamiIndex = 0;
+          }
+        } else {
+          konamiIndex = 0;
+        }
+      });
     </script>
-</body>
+  </body>
 </html>
