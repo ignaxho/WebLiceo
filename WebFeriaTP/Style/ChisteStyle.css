@@ -8,6 +8,9 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   min-height: 100vh;
   text-align: center;
+  background-image: url("../Images/Confeti.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
 }
 /* Estilos para el navbar */
 .topnav {
@@ -57,8 +60,6 @@ body {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  margin: 10px;
-  margin-top: 450px;
 }
 
 #registroBtn:hover {
@@ -83,10 +84,49 @@ body {
   height: 100%;
   object-fit: contain;
 }
-.parrafo{
-    font-size: 20px;
-    font: sans-serif;
-    color: #000;
-    margin: 20px;
-    text-align: left;
+.parrafo {
+  font-size: 20px;
+  font: sans-serif;
+  color: #000;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 20px;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 5px 15px;
+  text-align: center;
+  margin: 20px;
+}
+.InputContainer {
+  font-size: 1em;
+  font: sans-serif;
+  color: #000;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 20px;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 5px 15px;
+  margin: 20px;
+}
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #262469;
+}
+.footer-content {
+  font-size: smaller;
+  line-height: 1px;
+  color: white;
+  text-align: left;
+  padding-left: 20px;
+}
+.Desarrollado {
+  text-align: right;
+  padding-right: 20px;
+}
+.Titulo {
+  font-size: 3em;
+  font: sans-serif;
+  color: #000;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 20px;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 5px 15px;
+  margin: 20px;
+  text-align: center;
 }

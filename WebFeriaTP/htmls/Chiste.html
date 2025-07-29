@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Página con Rick Roll Local</title>
+    <link rel="icon" href="../Images/favicon.ico" type="image/x-icon" />
+    <title>Sorteo</title>
     <link rel="stylesheet" href="../Style/ChisteStyle.css" />
   </head>
   <body>
@@ -22,9 +23,22 @@
         </div>
       </div>
     </header>
-    <h1>¡Registrate para el sorteo!</h1>
-    <p class="parrafo">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad esse, autem, id est dolorem magnam saepe non commodi voluptates vitae illum nihil incidunt molestias. Inventore assumenda magnam veritatis tempora quaerat.</p>
-    <button id="registroBtn">Registro</button>
+    <h1 class="Titulo">¡Registrate para el sorteo!</h1>
+    <p class="parrafo">
+      Participa en el sorteo de una PlayStation 5. Completa el formulario a
+      continuación para ingresar al sorteo. Asegúrate de ingresar tu nombre
+      completo y el curso al que perteneces.
+    </p>
+    <div class="InputContainer">
+      <form id="registroForm">
+        <label for="fname">Nombre completo:</label>
+        <input type="text" id="fname" name="fname" /><br /><br />
+        <label for="lname">Curso</label>
+        <input type="text" id="lname" name="lname" /><br /><br />
+        <input type="button" value="Registro" id="registroBtn" />
+      </form>
+      <script src="../Scripts/Dont-Change.js"></script>
+    </div>
 
     <div id="rickrollContainer">
       <video id="rickrollVideo" loop muted playsinline>
@@ -39,5 +53,11 @@
       </video>
     </div>
     <script src="../Scripts/Easter-Eggs.js"></script>
+    <footer class="footer">
+      <div class="footer-content">
+        <p>Tu informacion sera eliminada luego de la Feria</p>
+        <p class="Desarrollado">Desarrollado por Ignacio Olivares</p>
+      </div>
+    </footer>
   </body>
 </html>
